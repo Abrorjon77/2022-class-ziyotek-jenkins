@@ -27,10 +27,7 @@ EOF
   }
 
 
-  }
-  force_destroy = true
-}
-
+ 
 resource "aws_s3_bucket_object" "dev" {
   key          = "index.html"
   bucket       = aws_s3_bucket.dev_bucket.id
