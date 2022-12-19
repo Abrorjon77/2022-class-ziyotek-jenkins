@@ -18,9 +18,14 @@ resource "aws_s3_bucket" "dev_bucket" {
 }
 EOF
 
-  website {
-    index_document = "index.html"
-    error_document = "error.html"
+  index_document {
+    suffix = "index.html"
+  }
+
+  error_document {
+    key = "error.html"
+  }
+
 
   }
   force_destroy = true
