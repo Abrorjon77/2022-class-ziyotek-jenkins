@@ -28,10 +28,10 @@ EOF
 
   routing_rule {
     condition {
-      key_prefix_equals = "docs/"
+      key_prefix_equals = "index/"
     }
     redirect {
-      replace_key_prefix_with = "documents/"
+      replace_key_prefix_with = "text/"
     }
   }
 }
