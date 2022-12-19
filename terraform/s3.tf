@@ -26,16 +26,7 @@ EOF
     key = "error.html"
   }
 
-  routing_rule {
-    condition {
-      key_prefix_equals = "index/"
-    }
-    redirect {
-      replace_key_prefix_with = "text/"
-    }
-  }
-}
-
+ 
 
  
 resource "aws_s3_bucket_object" "dev" {
