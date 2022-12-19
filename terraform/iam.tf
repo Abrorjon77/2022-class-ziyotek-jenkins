@@ -37,8 +37,8 @@ resource "aws_iam_policy" "s3_access_policy" {
         ]
         Effect = "Allow"
         Resource = [
-          "${aws_s3_bucket.dev_bucket.arn}",
-          "${aws_s3_bucket.dev_bucket.arn}/*",
+          "aws_s3_bucket.dev_bucket.arn",
+          "aws_s3_bucket.dev_bucket.arn/*",
         ]
       }
     ]
