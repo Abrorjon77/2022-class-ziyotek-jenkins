@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "dev_bucket" {
-  bucket = "jenkins-bucket-abror-ziyotek-${data.aws_caller_identity.current.account_id}"
+  bucket = "jenkins-bucket-abror-ziyotek-data.aws_caller_identity.current.account_id"
 
   policy = <<EOF
 {
