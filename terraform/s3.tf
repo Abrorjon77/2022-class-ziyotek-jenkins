@@ -1,4 +1,4 @@
-resource "aws_s3_bucket" "dev_bucket" {
+resource "aws_s3_bucket" "de_bucket" {
   bucket = "jenkins-bucket-ziyotek-${data.aws_caller_identity.current.account_id}"
 
   policy = <<EOF
@@ -26,9 +26,9 @@ EOF
   force_destroy = true
 }
 
-resource "aws_s3_bucket_object" "dev" {
+resource "aws_s3_bucket_object" "de" {
   key          = "index.html"
-  bucket       = aws_s3_bucket.dev_bucket.id
+  bucket       = aws_s3_bucket.de_bucket.id
   content      = file("../assets/index.html")
   content_type = "text/html"
 
