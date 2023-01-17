@@ -8,4 +8,11 @@ data "aws_ami" "example" {
   }
 }
 
+data "aws_region" "current" {}
+
+output "image_id" {
+  value = data.aws_ami.example.image_id
+}
+
+data "aws_caller_identity" "current" {}
 
