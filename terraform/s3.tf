@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "dev_bucket" {
-  bucket = "jenkins-bucket-ziyotek-data.aws_caller_identity.current.account_id"
+  bucket = "jenkins-bucket-ziyotek-${data.aws_caller_identity.current.account_id}"
 
   policy = <<EOF
 {
@@ -18,17 +18,14 @@ resource "aws_s3_bucket" "dev_bucket" {
 }
 EOF
 
- index_document {
-    suffix = "index.html"
+  website {
+    index_document = "index.html"
+    error_document = "error.html"
+
   }
+  force_destroy = true
+}
 
-  error_document {
-    key = "error.html"
-  }
-
- 
-
- 
 resource "aws_s3_bucket_object" "dev" {
   key          = "index.html"
   bucket       = aws_s3_bucket.dev_bucket.id
