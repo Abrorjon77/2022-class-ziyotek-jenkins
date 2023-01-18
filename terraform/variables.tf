@@ -44,7 +44,7 @@ variable "acl_type" {
 }
 
 variable "environment" {
-  default = "SBX1"
+  default = "dev"
 }
 
 variable "ebs_optimized" {
@@ -84,7 +84,7 @@ variable "sg_tags" {
 variable "db_tags" {
   type = map(any)
   default = {
-    Name        = "dav-database"
+    Name        = "dev-database"
     Environment = "dev"
   }
 }
