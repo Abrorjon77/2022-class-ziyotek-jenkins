@@ -1,5 +1,7 @@
 resource "aws_s3_bucket" "dev_bucket" {
   bucket = "jenkins-bucket-ziyotek-${data.aws_caller_identity.current.account_id}"
+  
+ 
 
   policy = <<EOF
 {
@@ -12,7 +14,8 @@ resource "aws_s3_bucket" "dev_bucket" {
             "Action": [
                 "s3:GetObject"
             ],
-            "Resource": "*"
+            "Resource": [
+              "*"
         }
     ]
 }
