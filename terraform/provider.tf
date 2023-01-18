@@ -7,10 +7,10 @@ provider "aws" {
   }
 }
 
-# terraform {
-#   backend "s3" {
-#     bucket = "public-tfpstate-rady-bucket"
-#     key    = "tfstate"
-#     region = "us-east-1"
-#   }
-# }
+terraform {
+  backend "s3" {
+    bucket = "jenkins-bucket-ziyotek-816725581106"
+    key    = "tfstate"
+    region = "us-east-1"
+  }
+}
