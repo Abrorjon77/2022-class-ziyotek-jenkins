@@ -20,7 +20,7 @@ pipeline {
             steps {
                 sh '''
                 echo 'Deploying terraform infrastructure'
-                cd terraform
+                cd terraform .
                 terraform apply -auto-approve
                 '''
             }
