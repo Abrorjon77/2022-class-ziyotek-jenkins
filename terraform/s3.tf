@@ -16,7 +16,8 @@ resource "aws_s3_bucket" "dev_bucket" {
             ],
             "Resource": [
               "*"
-        }
+          ]
+       }
     ]
 }
 EOF
