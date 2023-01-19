@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "dev_bucket" {
-  bucket = "jenkins-bucket-ziyotek-${data.aws_caller_identity.current.account_id}"
+  bucket = "${var.bucket_name}-${data.aws_caller_identity.current.account_id}"
   
  
 
